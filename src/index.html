@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 
+  <scripts>
+  async function list() {
+    const endpoint = '/data-api/rest/Inkomsten';
+    const response = await fetch(endpoint);
+    const data = await response.json();
+    console.table(data.value);
+  }
+</scripts>
+  
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,13 +24,5 @@
 </div>
 </body>
 
-<scripts>
-  async function list() {
-    const endpoint = '/data-api/rest/Inkomsten';
-    const response = await fetch(endpoint);
-    const data = await response.json();
-    console.table(data.value);
-  }
-</scripts>
 
 </html>
